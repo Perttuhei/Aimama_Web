@@ -4,11 +4,11 @@ import { supabase } from "../utils/supabaseClient";
 import '../styles/MarketingTools.css';
 import { useLanguage } from '../utils/LangProvider';
 
-interface SavedMaterial {
+/*interface SavedMaterial {
   text: string;
   image?: string | null;
   timestamp: number;
-}
+}*/
 
 const MarketingTools: React.FC = () => {
   const [generatedContent, setGeneratedContent] = useState<{ text: string; image: string | null } | null>(null);
@@ -21,7 +21,7 @@ const MarketingTools: React.FC = () => {
   const [imagePromptInput, setImagePromptInput] = useState<string>(''); 
   const [currentToolContext, setCurrentToolContext] = useState<string | null>(null);
 
-  const saveMaterialToSessionStorage = (material: SavedMaterial) => {
+  /*const saveMaterialToSessionStorage = (material: SavedMaterial) => {
     const storedMaterialsString = localStorage.getItem('generatedMarketingMaterials');
     let materials: SavedMaterial[] = [];
 
@@ -40,7 +40,7 @@ const MarketingTools: React.FC = () => {
       console.log("example of adding material to local storage")
       //localStorage.setItem(currentToolContext, JSON.stringify(materials));
     }
-  };
+  };*/
 
   const handleGenerateFromUrl = async () => {
     if (!urlInput.trim()) {
@@ -99,11 +99,11 @@ const MarketingTools: React.FC = () => {
         throw new Error(translations.marketingTools.noImageFound);
       }
       setGeneratedContent({ text: generatedText, image: generatedImage });
-      saveMaterialToSessionStorage({
+      /*saveMaterialToSessionStorage({
         text: generatedText,
         image: generatedImage,
         timestamp: Date.now(),
-      });
+      });*/
 
     } catch (e: unknown) {
       console.error("Error during content generation workflow:", e);
