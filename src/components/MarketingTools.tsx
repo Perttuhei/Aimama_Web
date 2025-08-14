@@ -37,7 +37,8 @@ const MarketingTools: React.FC = () => {
     materials.unshift(material);
 
     if (currentToolContext) {
-      localStorage.setItem(currentToolContext, JSON.stringify(materials));
+      console.log("example of adding material to local storage")
+      //localStorage.setItem(currentToolContext, JSON.stringify(materials));
     }
   };
 
