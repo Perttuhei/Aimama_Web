@@ -102,6 +102,20 @@ export const Chat: React.FC = () => {
               </div>
             </div>
           ))}
+          {isLoading && (
+            <div className="message ai">
+              <div className="message-bubble loading">
+                <span className="sender-label">{translations.chat.aiLabel}</span> Vastaus tulossa...
+              </div>
+            </div>
+          )}
+          {error && (
+            <div className="message ai error">
+              <div className="message-bubble">
+                <span className="sender-label">{translations.chat.aiLabel}</span> {error}
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} /> 
         </div>
 
